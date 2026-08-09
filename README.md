@@ -12,7 +12,7 @@ Dự án **TypeLab** được xây dựng trên nền tảng **Laravel 13** (PHP
 | Laravel | ^13.8 | PHP Framework |
 | Vite | ^8.0.0 | Build tool cho frontend |
 | Tailwind CSS | ^4.0.0 | CSS Framework |
-| SQLite | — | Cơ sở dữ liệu mặc định |
+| MySQL | 3306 | Cơ sở dữ liệu chính |
 | Laragon | — | Môi trường phát triển local |
 
 ---
