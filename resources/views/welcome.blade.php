@@ -6,7 +6,7 @@
     <title>TypeLab - Nâng Tầm Trải Nghiệm Gõ Của Bạn</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
-        // Set theme mode based on local storage or system preference before page loads
+        // Cài đặt chế độ giao diện (sáng/tối) dựa trên local storage hoặc tùy chọn hệ thống trước khi tải trang
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -16,7 +16,7 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased selection:bg-cyan-500 selection:text-white transition-colors duration-300">
 
-    <!-- Header (Navbar) -->
+    <!-- Phần Header (Thanh điều hướng) -->
     <header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between">
             <!-- Logo -->
@@ -25,7 +25,7 @@
                 <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors">Type<span class="text-cyan-600 dark:text-cyan-400">Lab</span></span>
             </a>
             
-            <!-- Navigation -->
+            <!-- Menu điều hướng -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600 dark:text-gray-300">
                 <a href="#" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Trang chủ</a>
                 <a href="#shop" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Cửa hàng</a>
@@ -33,7 +33,7 @@
                 <a href="#" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Tra cứu Ticket</a>
             </nav>
             
-            <!-- Icons -->
+            <!-- Các Icon -->
             <div class="flex items-center gap-4">
                 <button id="theme-toggle" type="button" class="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm p-2 transition-colors">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -55,9 +55,9 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Phần Hero (Giới thiệu) -->
         <section class="relative pt-20 pb-28 overflow-hidden transition-colors duration-300">
-            <!-- Grid background pattern -->
+            <!-- Lưới nền background -->
             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,black,transparent)] z-0"></div>
             
             <div class="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-12">
@@ -91,7 +91,7 @@
             </div>
         </section>
 
-        <!-- Featured Products -->
+        <!-- Sản phẩm nổi bật -->
         @php
         $products = [
             ['name' => 'Lab TKL Pro', 'switch' => 'Gateron Oil King (Linear)', 'price' => '3.500.000đ', 'image' => 'keyboards/product-tkl.png'],
@@ -138,7 +138,7 @@
             </div>
         </section>
 
-        <!-- Repair Services -->
+        <!-- Dịch vụ sửa chữa -->
         <section id="services" class="py-24 bg-white dark:bg-gray-800/50 border-t border-gray-200 dark:border-gray-800 relative transition-colors duration-300">
             <div class="container mx-auto px-4">
                 <div class="text-center max-w-2xl mx-auto mb-16">
@@ -147,10 +147,10 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                    <!-- Line connecting steps (desktop) -->
+                    <!-- Đường nối giữa các bước (trên desktop) -->
                     <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gray-200 dark:bg-gray-700 transition-colors"></div>
                     
-                    <!-- Step 1 -->
+                    <!-- Bước 1 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-24 h-24 rounded-full bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center relative z-10 mb-6 group hover:border-cyan-500 dark:hover:border-cyan-400 transition-colors shadow-sm dark:shadow-none">
                             <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -160,7 +160,7 @@
                         <p class="text-gray-600 dark:text-gray-400 transition-colors">Tạo ticket và gửi bàn phím của bạn đến địa chỉ Lab hoặc mang đến trực tiếp.</p>
                     </div>
                     
-                    <!-- Step 2 -->
+                    <!-- Bước 2 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-24 h-24 rounded-full bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center relative z-10 mb-6 group hover:border-cyan-500 dark:hover:border-cyan-400 transition-colors shadow-sm dark:shadow-none">
                             <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
@@ -170,7 +170,7 @@
                         <p class="text-gray-600 dark:text-gray-400 transition-colors">Kỹ thuật viên sẽ kiểm tra chi tiết, tư vấn giải pháp và báo giá minh bạch.</p>
                     </div>
                     
-                    <!-- Step 3 -->
+                    <!-- Bước 3 -->
                     <div class="relative flex flex-col items-center text-center">
                         <div class="w-24 h-24 rounded-full bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 flex items-center justify-center relative z-10 mb-6 group hover:border-cyan-500 dark:hover:border-cyan-400 transition-colors shadow-sm dark:shadow-none">
                             <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path></svg>
@@ -191,11 +191,11 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Phần Footer (Chân trang) -->
     <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-16 pb-8 transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
+                <!-- Thương hiệu -->
                 <div>
                     <a href="/" class="flex items-center gap-2 mb-6">
                         <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.001"/><path d="M10 8h.001"/><path d="M14 8h.001"/><path d="M18 8h.001"/><path d="M8 12h.001"/><path d="M12 12h.001"/><path d="M16 12h.001"/><path d="M7 16h10"/></svg>
@@ -214,7 +214,7 @@
                     </div>
                 </div>
                 
-                <!-- Links -->
+                <!-- Liên kết -->
                 <div>
                     <h4 class="text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm mb-6 transition-colors">Liên Kết Hữu Ích</h4>
                     <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -225,7 +225,7 @@
                     </ul>
                 </div>
                 
-                <!-- Policies -->
+                <!-- Chính sách -->
                 <div>
                     <h4 class="text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm mb-6 transition-colors">Chính Sách</h4>
                     <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -236,7 +236,7 @@
                     </ul>
                 </div>
                 
-                <!-- Contact -->
+                <!-- Liên hệ -->
                 <div>
                     <h4 class="text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm mb-6 transition-colors">Liên Hệ</h4>
                     <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
@@ -263,13 +263,13 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle Script -->
+    <!-- Script Đổi Giao Diện -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Change the icons inside the button based on previous settings
+        // Thay đổi icon bên trong nút dựa trên cài đặt trước đó
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             themeToggleLightIcon.classList.remove('hidden');
         } else {
@@ -277,11 +277,11 @@
         }
 
         themeToggleBtn.addEventListener('click', function() {
-            // toggle icons inside button
+            // Chuyển đổi icon bên trong nút
             themeToggleDarkIcon.classList.toggle('hidden');
             themeToggleLightIcon.classList.toggle('hidden');
 
-            // if set via local storage previously
+            // Nếu đã lưu trong local storage trước đó
             if (localStorage.getItem('color-theme')) {
                 if (localStorage.getItem('color-theme') === 'light') {
                     document.documentElement.classList.add('dark');
@@ -291,7 +291,7 @@
                     localStorage.setItem('color-theme', 'light');
                 }
 
-            // if NOT set via local storage previously
+            // Nếu CHƯA lưu trong local storage trước đó
             } else {
                 if (document.documentElement.classList.contains('dark')) {
                     document.documentElement.classList.remove('dark');
