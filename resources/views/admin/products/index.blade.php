@@ -1,26 +1,29 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-bold text-2xl text-gray-900 dark:text-white leading-tight tracking-tight">
-                {{ __('Quản lý Sản phẩm') }}
-            </h2>
-            <a href="{{ route('admin.products.create') }}" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-500 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-all shadow-md hover:shadow-lg hover:shadow-cyan-500/20">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                Thêm Sản Phẩm
-            </a>
+        <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-600 mb-0.5">Quản lý</p>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white leading-tight">Sản phẩm</h1>
         </div>
     </x-slot>
 
-    <div class="py-8">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @if (session('success'))
-                <div class="mb-6 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 px-5 py-4 rounded-xl flex items-center gap-3 shadow-sm transition-colors" role="alert">
-                    <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    <span class="font-medium">{{ session('success') }}</span>
-                </div>
-            @endif
-            
-            <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 overflow-hidden shadow-sm sm:rounded-2xl transition-colors duration-300">
+    <div class="space-y-6">
+        @if (session('success'))
+            <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 px-5 py-4 rounded-xl flex items-center gap-3 shadow-sm transition-colors" role="alert">
+                <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="font-medium">{{ session('success') }}</span>
+            </div>
+        @endif
+
+        <!-- Thanh hành động -->        
+        <div class="flex items-center justify-between">
+            <p class="text-sm text-gray-500 dark:text-gray-400">Quản lý toàn bộ sản phẩm trong cửa hàng.</p>
+            <a href="{{ route('admin.products.create') }}" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-all shadow-md hover:shadow-lg hover:shadow-cyan-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                Thêm Sản Phẩm
+            </a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm rounded-2xl transition-colors duration-300">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead>
@@ -104,3 +107,4 @@
         </div>
     </div>
 </x-app-layout>
+

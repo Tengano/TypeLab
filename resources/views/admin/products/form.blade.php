@@ -1,18 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex items-center gap-4">
-            <a href="{{ route('admin.products.index') }}" class="p-2 -ml-2 text-gray-500 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        <div class="flex items-center gap-3">
+            <a href="{{ route('admin.products.index') }}" class="p-1.5 -ml-1.5 text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
             </a>
-            <h2 class="font-bold text-2xl text-gray-900 dark:text-white leading-tight tracking-tight">
-                {{ isset($product) ? 'Cập nhật: ' . $product->name : 'Thêm Sản Phẩm Mới' }}
-            </h2>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-600 mb-0.5">Sản phẩm</p>
+                <h1 class="text-xl font-bold text-gray-900 dark:text-white leading-tight">
+                    {{ isset($product) ? 'Cập nhật: ' . $product->name : 'Thêm Sản Phẩm Mới' }}
+                </h1>
+            </div>
         </div>
     </x-slot>
 
-    <div class="py-8">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-            <form action="{{ isset($product) ? route('admin.products.update', $product) : route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
+    <div class="max-w-4xl">
+        <form action="{{ isset($product) ? route('admin.products.update', $product) : route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if(isset($product))
                     @method('PUT')
@@ -128,6 +130,6 @@
                     </div>
                 </div>
             </form>
-        </div>
     </div>
 </x-app-layout>
+

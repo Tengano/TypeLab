@@ -1,29 +1,29 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Profile') }}
-        </h2>
+        <div>
+            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">Hồ sơ cá nhân</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Quản lý thông tin tài khoản và bảo mật của bạn.</p>
+        </div>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
+    <div class="space-y-6">
+        <!-- Hàng 1: Thông tin cá nhân & Mật khẩu -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <!-- Card Thông tin cá nhân -->
+            <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 sm:p-8 shadow-sm transition-colors duration-300">
+                @include('profile.partials.update-profile-information-form')
             </div>
 
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
+            <!-- Card Mật khẩu -->
+            <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6 sm:p-8 shadow-sm transition-colors duration-300">
+                @include('profile.partials.update-password-form')
             </div>
+        </div>
 
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
+        <!-- Hàng 2: Xóa tài khoản -->
+        <div class="bg-white dark:bg-gray-900 border border-red-200 dark:border-red-900/50 rounded-2xl p-6 sm:p-8 shadow-sm transition-colors duration-300">
+            @include('profile.partials.delete-user-form')
         </div>
     </div>
 </x-app-layout>
+
