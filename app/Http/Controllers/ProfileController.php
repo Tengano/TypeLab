@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Order;
+use App\Models\RepairTicket;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +49,12 @@ class ProfileController extends Controller
         ]);
 
         $user = $request->user();
+
+        // Chuyển đơn hàng của user về anonymous (giữ lại dữ liệu)
+        Order::where('user_id', $user->id)->update(['user_id' => null]);
+
+        // Chuyển ticket sửa chữa của user về anonymous (giữ lại dữ liệu)
+        RepairTicket::where('user_id', $user->id)->update(['user_id' => null]);
 
         Auth::logout();
 

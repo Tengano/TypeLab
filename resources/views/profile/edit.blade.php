@@ -2,7 +2,6 @@
     <x-slot name="header">
         <div>
             <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">Hồ sơ cá nhân</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Quản lý thông tin tài khoản và bảo mật của bạn.</p>
         </div>
     </x-slot>
 
